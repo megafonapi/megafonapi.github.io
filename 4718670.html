@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Мегафон - Телеком API : Входящий вызов</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Мегафон - Телеком API</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3309691.html">Мегафон.API : описание программных интерфейсов</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Мегафон - Телеком API : Входящий вызов
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Alexey Brykov</span>, last modified by <span class='editor'> Sergei Naumov</span> on Dec 04, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="id-Входящийвызов-ОбработкасобытияOnIncomingCall">Обработка события OnIncomingCall</h1><p>После успешной авторизации (см “<a href="3309691.html#id-Мегафон.API:описаниепрограммныхинтерфейсов-Авторизация">Авторизация</a>”) приложение готово к приему входящего вызова. В случае входящего вызова на номер MSISDN, по которому прошла авторизация, в приложение будет передано событие OnIncomingCall (См. <a href="3309767.html">События</a>. OnIncomingCall)</p><p><br/></p><h3 id="id-Входящийвызов-Синтаксисвызова">Синтаксис вызова</h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Eclipse" data-theme="Eclipse">{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;OnIncomingCall&quot;, &quot;params&quot;: {&quot;call_session&quot;: &quot;1000295&quot;, &quot;anum&quot;: &quot;79269876543&quot;, &quot;bnum&quot;: &quot;79281234567&quot;}}</pre>
+</div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="id-Входящийвызов-AnswerCall">AnswerCall</h1><p>Прием входящего вызова. Команда посылается при наличии активного входящего  вызова (См. <a href="3309767.html">События</a>. OnIncomingCall). Номера и код сессии считываются из OnIncomingCall.</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>передаваемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">call_session</td><td class="confluenceTd">уникальный идентификатор сессии, возвращаемый из события OnIncomingCall</td></tr></tbody></table></div><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>возвращаемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">не предусмотрено</td><td class="confluenceTd"><br/></td></tr></tbody></table></div><p><strong style="font-size: 16.0px;letter-spacing: -0.006em;"><br/></strong></p><p><strong style="font-size: 16.0px;letter-spacing: -0.006em;">События, ожидаемые приложением (опционально)</strong></p><p>После вызова команды приложение автоматически подписано на следующие события  (см. <a href="3309767.html">Отслеживание и обработка событий</a>)</p><ul><li><p class="_mce_tagged_br">OnDisconnect</p></li><li class="_mce_tagged_br">OnSpeech</li><li class="_mce_tagged_br">OnSilence</li></ul><h3 id="id-Входящийвызов-Синтаксисвызова.1"><strong style="letter-spacing: 0.0px;">Синтаксис вызова</strong></h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Eclipse" data-theme="Eclipse">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;AnswerCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000277&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;AnswerCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000277&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32006, &quot;reason&quot;: &quot;incorrect call_session&quot;}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;AnswerCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000277&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32007, &quot;reason&quot;: &quot;unknown_error&quot;}}, &quot;id&quot;: 2}</pre>
+</div></div><p><br/></p><pre><strong style="font-size: 16.0px;letter-spacing: -0.006em;">Коды ошибок</strong></pre><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">ошибки выполнения</th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">code / reason</td><td class="confluenceTd"><ul><li>-32006 / incorrect call_session, не верный или не существующий идентификатор сеанса</li><li>-32007 / unknown error</li></ul></td></tr></tbody></table></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 04, 2018 15:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

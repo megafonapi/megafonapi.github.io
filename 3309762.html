@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Мегафон - Телеком API : Работа с очередями (в разработке)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Мегафон - Телеком API</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3309691.html">Мегафон.API : описание программных интерфейсов</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Мегафон - Телеком API : Работа с очередями (в разработке)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Alexey Brykov</span>, last modified by <span class='editor'> Konstantin Levchin</span> on Nov 14, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><p><strong style="letter-spacing: 0.0px;">Команды работы с очередями</strong><span style="letter-spacing: 0.0px;"> позволяют создавать, удалять и обслуживать объекты типа &quot;очередь&quot;. </span></p><p>Очереди используются для организации работы контактных центров, предоставляя возможность управлять состоянием вызова в очереди, информированием пользователя в очереди, передачей вызова выбранному агенту (оператору) путем создания вызова к нему.</p><p><strong>Агент</strong> - пользователь, принимающий и обрабатывающий вызов из очеред<span style="letter-spacing: 0.0px;">и. Максимальный размер очереди и количество одновременно работающих агентов на одной очереди задаются конфигурацией объекта &quot;очередь&quot;</span></p><p><strong>Выбор агента </strong>производится по алгоритмам ACD (Automatic Call Distribution) - автоматического распределения вызовов. Поддерживаются алгоритмы:</p><ul><li>Linear (линейный выбор. Звонки передаются по списку агентов в линейном порядке)</li><li>Round Robin (перебор по списку. Следующий звонок будет передан следующему агенту из списка) </li><li>Weighted (звонки передаются в соотвествии с весом каждого агента)</li></ul><p><br/></p><p><strong>Команды работы с очередями находятся в разработке. </strong></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="id-Работасочередями(вразработке)-Созданиеочередивызовов">Создание очереди вызовов</h1></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="id-Работасочередями(вразработке)-CreateQueue">CreateQueue</h2></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="id-Работасочередями(вразработке)-Добавлениекочередиагента(вызованаагента)">Добавление к очереди агента (вызова на агента)</h1></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="id-Работасочередями(вразработке)-AddAgent">AddAgent</h2></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="id-Работасочередями(вразработке)-Удалениеагента(вызованаагента)">Удаление агента (вызова на агента)</h1></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="id-Работасочередями(вразработке)-RemoveAgent">RemoveAgent</h2></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="id-Работасочередями(вразработке)-Обновлениеданныхповызовунаагента">Обновление данных по вызову на агента</h1></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="id-Работасочередями(вразработке)-UpdateAgent">UpdateAgent</h2></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="id-Работасочередями(вразработке)-Помещениевызовавочередь">Помещение вызова в очередь</h1></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="id-Работасочередями(вразработке)-PutOnQueue">PutOnQueue</h2></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="id-Работасочередями(вразработке)-Удалениевызоваизочереди">Удаление вызова из очереди</h1></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="id-Работасочередями(вразработке)-DeleteFromQueue">DeleteFromQueue</h2></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="id-Работасочередями(вразработке)-Удалениеочереди">Удаление очереди</h1></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="id-Работасочередями(вразработке)-DeleteQueue">DeleteQueue</h2></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 04, 2018 15:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

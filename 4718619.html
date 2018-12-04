@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Мегафон - Телеком API : Сообщения об ошибках</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Мегафон - Телеком API</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3309691.html">Мегафон.API : описание программных интерфейсов</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Мегафон - Телеком API : Сообщения об ошибках
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Alexey Brykov</span>, last modified by <span class='editor'> Konstantin Levchin</span> on Nov 14, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Сообщение об ошибке имеет формат:</strong><br/>{<br/> &quot;jsonrpc&quot;: &quot;2.0&quot;,<br/> &quot;error&quot;: {<br/> &quot;code&quot;: -32601,<br/> &quot;reason&quot;: &quot;520&quot;<br/> },<br/> &quot;id&quot;: &quot;1&quot;<br/>}</p><p><br/></p><p><em><strong>параметры:</strong></em></p><p><span style="letter-spacing: 0.0px;"><em><strong>code</strong></em> определяет, в результате работы какой команды пришло сообщение об ошибке. Имеет следующие значения :</span></p><div class="table-wrap"><table class="relative-table confluenceTable" style="width: 26.911764%;"><colgroup><col style="width: 76.9863%;"/><col style="width: 23.013699%;"/></colgroup><tbody><tr><th class="confluenceTh">Команда</th><th style="text-align: center;" class="confluenceTh">code</th></tr><tr><td class="confluenceTd">MakeCall</td><td style="text-align: center;" class="confluenceTd">32001</td></tr><tr><td class="confluenceTd">TerminateCall</td><td style="text-align: center;" class="confluenceTd"><span>32002</span></td></tr><tr><td class="confluenceTd">PlayAnouncement</td><td style="text-align: center;" class="confluenceTd"><span>32004</span></td></tr><tr><td class="confluenceTd">CreateConf</td><td style="text-align: center;" class="confluenceTd"><span>32005</span></td></tr><tr><td class="confluenceTd">DeleteConf</td><td style="text-align: center;" class="confluenceTd"><span>32006</span></td></tr><tr><td class="confluenceTd">AddToConf</td><td style="text-align: center;" class="confluenceTd"><span>32007</span></td></tr><tr><td class="confluenceTd">RemoveFromConf</td><td style="text-align: center;" class="confluenceTd"><span>32008</span></td></tr></tbody></table></div><p><br/><br/></p><p><strong><br/></strong></p><p><em><strong>reason </strong></em>принимает следующие значения:</p><div class="table-wrap"><table class="confluenceTable"><colgroup><col style="width: 48.0pt;"/> <col/></colgroup><tbody><tr><td class="confluenceTd">1</td><td class="confluenceTd">Соединение завершено (hang up)</td></tr><tr><td class="confluenceTd">0</td><td class="confluenceTd">Нормальное завершение</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Сессия не существует</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Сессия заблокирована транзакцией SLOC</td></tr><tr><td class="confluenceTd">9</td><td class="confluenceTd">Ошибка в процессе обмена SDP для B2B-тромбонинга</td></tr><tr><td class="confluenceTd">11</td><td class="confluenceTd">Не удалось установить B2B-тромбонинг из-за несоответствия конечных точек RTP</td></tr><tr><td class="confluenceTd">232</td><td class="confluenceTd">Ошибка при попытке установления RTP-соединения (внутренние ошибки платформы - компонент MLI SNEW/ATCH/RTP1 reply)</td></tr><tr><td colspan="1" class="confluenceTd">520</td><td colspan="1" class="confluenceTd">Неопределенная ошибка (Unknown error)</td></tr><tr><td class="confluenceTd">2565</td><td class="confluenceTd">Завершение параллельных сессий, связанных через PSKEY</td></tr><tr><td class="confluenceTd">3074</td><td class="confluenceTd">Линия занята (SIP 486 Busy Here)</td></tr><tr><td class="confluenceTd">3075</td><td class="confluenceTd">Отмена вызова по CNCL или не удалось установить соединение</td></tr><tr><td class="confluenceTd">3076</td><td class="confluenceTd">Вызов отклонен</td></tr><tr><td class="confluenceTd">3077</td><td class="confluenceTd">Получен ответ SIP 404 Not Found</td></tr><tr><td class="confluenceTd">3078</td><td class="confluenceTd">Нет ответа</td></tr><tr><td class="confluenceTd">3080</td><td class="confluenceTd">Получен ответ SIP 410 или 480</td></tr><tr><td class="confluenceTd">3081</td><td class="confluenceTd">Сервис не доступен (SIP 500) или неверный SDP: SAI SUPR reply INVITE_PROV_RESP/INVITE_2XX невыполнение precondition (e2e, local, remote)</td></tr><tr><td class="confluenceTd">3082</td><td class="confluenceTd">Маршрут недоступен</td></tr><tr><td class="confluenceTd">3095</td><td class="confluenceTd">Состояние сессии (или SECSESS) входит в списк состояний перечисленных в STATESET FICS</td></tr><tr><td class="confluenceTd">3840</td><td class="confluenceTd">Получен REINVITE</td></tr></tbody></table></div><p><br/></p><p><br/></p>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 04, 2018 15:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

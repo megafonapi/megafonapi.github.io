@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Мегафон - Телеком API : Обработка вызова после соединения</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Мегафон - Телеком API</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3309691.html">Мегафон.API : описание программных интерфейсов</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Мегафон - Телеком API : Обработка вызова после соединения
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Alexey Brykov</span>, last modified by <span class='editor'> Sergei Naumov</span> on Dec 04, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><h1 id="id-Обработкавызовапослесоединения-TromboneCall">TromboneCall</h1><p>Соединяет речевой тракт двух сессий (полный дуплекс)</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>передаваеный параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd"><span>a_session</span></td><td class="confluenceTd">Уникальный номер первой сессии для объединения. Тип – UUID4. Возвращается методом MakeCall или событием OnIncomingCall.</td></tr><tr><td colspan="1" class="confluenceTd"><span>b_session</span></td><td colspan="1" class="confluenceTd"><span>Уникальный номер первой сессии для объединения. Тип – UUID4. Возвращается методом MakeCall или событием OnIncomingCall.</span></td></tr></tbody></table></div><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>возвращаемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">не предусмотрено</td><td class="confluenceTd"><p><br/></p></td></tr></tbody></table></div><p>После вызова команды приложение автоматически подписано на следующие события от любой из двух сессий  (см. <a href="3309767.html">Отслеживание и обработка событий</a>)</p><ul><li>OnDisconnect</li></ul><h3 id="id-Обработкавызовапослесоединения-Синтаксисвызова"><strong>Синтаксис вызова</strong></h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Eclipse" data-theme="Eclipse">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;TromboneCall&quot;,&quot;params&quot;:{&quot;a_session&quot;:&quot;1000277&quot;, &quot;b_session&quot;:&quot;1000228&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;TromboneCall&quot;,&quot;params&quot;:{&quot;a_session&quot;:&quot;1000277&quot;, &quot;b_session&quot;:&quot;1000228&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32010, &quot;reason&quot;: &quot;error&quot;}}, &quot;id&quot;: 2}</pre>
+</div></div><h3 id="id-Обработкавызовапослесоединения-Кодыошибок"><strong>Коды ошибок</strong></h3><p>В случае не успешного выполнения поле message устанавлвиается в значение Error и возвращаются следующие параметры:<strong><br/></strong></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">ошибки выполнения</th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">code / reason</td><td class="confluenceTd">-32010 / error</td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><h1 id="id-Обработкавызовапослесоединения-RejectCall">RejectCall</h1><p>Переводит вызов на указанный номер.</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>передаваеный параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">call_session</td><td class="confluenceTd">Уникальный идентификатор сеанса. Возвращается методом MakeCall или событием OnIncomingCall.</td></tr></tbody></table></div><p class="auto-cursor-target">В случае успешного соединения поле <strong>message</strong> устанавливается в значение <strong>Success</strong> и возвращаются следующие параметры</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>возвращаемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">не предусмотрено</td><td class="confluenceTd"><p><br/></p></td></tr></tbody></table></div><h3 id="id-Обработкавызовапослесоединения-Синтаксисвызова.1"><strong style="letter-spacing: 0.0px;">Синтаксис вызова</strong></h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Eclipse" data-theme="Eclipse">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;RejectCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000277&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;RejectCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;123&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32004, &quot;reason&quot;: &quot;incorrect call_session&quot;}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;RejectCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;123&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32005, &quot;reason&quot;: &quot;unkown error&quot;}}, &quot;id&quot;: 2}</pre>
+</div></div><p><br/></p><h3 id="id-Обработкавызовапослесоединения-Кодыошибок.1"><strong>Коды ошибок </strong></h3><p>В случае не успешного выполнения поле <strong>message</strong> устанавлвиается в значение <strong>Error</strong> и возвращаются следующие параметры:</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">ошибки выполнения</th><th class="confluenceTh">значения</th></tr><tr><td class="confluenceTd">code / reason</td><td class="confluenceTd"><ul><li>-32004 / incorrect call session, не правильно задан идентификатор сеанса или идентификатор не существует</li><li>-32005 / unknown error</li></ul></td></tr></tbody></table></div><p><strong> </strong></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><h1 id="id-Обработкавызовапослесоединения-TerminateCall">TerminateCall</h1><p>Разрыв вызова по инициативе приложения. Команда приведет к прекращению вызова в случае, если вызов был активным, или вернет код ошибки в любом другом случае.</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>передаваемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">session</td><td class="confluenceTd">Уникальный номер сессии, используемый при дальнейшей работе с вызовом. Тип – UUID4. Возвращается методом MakeCall или событием OnIncomingCall.</td></tr></tbody></table></div><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>возвращаемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">не предусмотрено</td><td class="confluenceTd"><br/></td></tr></tbody></table></div><p><strong style="font-size: 16.0px;letter-spacing: -0.006em;"><br/></strong></p><p><strong style="font-size: 16.0px;letter-spacing: -0.006em;">События, ожидаемые приложением (опционально)</strong></p><p>Не предусмотрено.</p><h3 id="id-Обработкавызовапослесоединения-Синтаксисвызова.2"><strong>Синтаксис вызова</strong></h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Eclipse" data-theme="Eclipse">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;TerminateCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000277&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;TerminateCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000277&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32008, &quot;reason&quot;: &quot;resource error&quot;}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;TerminateCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000277&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32009, &quot;reason&quot;: &quot;unknown_error&quot;}}, &quot;id&quot;: 2}</pre>
+</div></div><p><br/></p><h3 id="id-Обработкавызовапослесоединения-Кодыошибок.2"><strong>Коды ошибок</strong></h3><p>В случае не успешного выполнения поле <strong>message</strong> устанавлвиается в значение <strong>Error</strong> и возвращаются следующие параметры:</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>ошибки выполнения</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">code / reason</td><td class="confluenceTd"><ul><li>-32008 / reasource error</li><li>-32009 / unknown error</li></ul></td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><h1 id="id-Обработкавызовапослесоединения-PlayAnnouncement">PlayAnnouncement</h1><p>Проигрывает звуковое сообщение на входящее или исходящее плечо вызова. Звуковое сообщение должно быть сохранено в папке пользователя (см. &quot;<a href="4718745.html">Работа с файлами</a>&quot;).</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>передаваемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">call_session</td><td class="confluenceTd">Уникальный идентификатор сеанса, в который необходимо проигрывать звоковой фрагмент. Возвращается методом MakeCall или событием OnIncomingCall.</td></tr><tr><td class="confluenceTd">filename</td><td class="confluenceTd"><p>Имя файла проигрываемого сообщения. Имя файла содержит расширение, но не содержит путь. Файл должен находится в папке пользователя (см. &quot;<a href="4718745.html">Работа с файлами</a>&quot;) Формат файла - 64K PCM A-law (8KHz, 8 Bit). Например, используя sox,  можно конвертировать следующим образом (в Linux):</p><p><span class="kw2" style="color: rgb(32,96,160);">$ sox</span><span style="color: rgb(0,0,0);"> </span><span class="re5" style="color: rgb(0,0,0);">-V</span><span style="color: rgb(0,0,0);"> hello.wav </span><span class="re5" style="color: rgb(0,0,0);">-r</span><span style="color: rgb(0,0,0);"> </span><span class="nu0" style="color: rgb(0,128,160);">8000</span><span style="color: rgb(0,0,0);"> </span><span class="re5" style="color: rgb(0,0,0);">-c</span><span style="color: rgb(0,0,0);"> </span><span class="nu0" style="color: rgb(0,128,160);">1</span><span style="color: rgb(0,0,0);"> </span><span class="re5" style="color: rgb(0,0,0);">-t</span><span style="color: rgb(0,0,0);"> al hello.alaw</span></p></td></tr></tbody></table></div><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>возвращаемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">dtmf</td><td class="confluenceTd">строка, содержащая цифры, нажатые пользователем на цифровой клавиатуре телефона (DTMF-коды). Символ решетки (#) останавливает ввод пользователя и возвращает значение.</td></tr></tbody></table></div><p><br/></p><h3 id="id-Обработкавызовапослесоединения-События,ожидаемыеприложением(опционально)"><strong>События, ожидаемые приложением (опционально)</strong></h3><p>Не предусмотрено.</p><h3 id="id-Обработкавызовапослесоединения-Синтаксисвызова.3"><strong>Синтаксис вызова</strong></h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Eclipse" data-theme="Eclipse">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;PlayAnouncement&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000277&quot;, &quot;filename&quot;:&quot;file.vox&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {&quot;dtmf&quot;:&quot;86#&quot;}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;PlayAnouncement&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000277&quot;, &quot;filename&quot;:&quot;file.vox&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32012, &quot;reason&quot;: &quot;resource error&quot;}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;PlayAnouncement&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000277&quot;, &quot;filename&quot;:&quot;file.vox&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32022, &quot;reason&quot;: &quot;unknown error&quot;}}, &quot;id&quot;: 2}</pre>
+</div></div><p><br/></p><h3 id="id-Обработкавызовапослесоединения-Кодыошибок.3"><strong>Коды ошибок</strong></h3><p>В случае не успешного выполнения поле message устанавлвиается в значение Error и возвращаются следующие параметры:<strong><br/></strong></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">ошибки выполнения</th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">code / reason</td><td class="confluenceTd"><ul><li>-32012 / resource error</li><li>-32022 / unknown error</li></ul></td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><h1 id="id-Обработкавызовапослесоединения-RecordCall">RecordCall</h1><p>Позволяет включить запись текущей сессии (разговор, конференция)</p><div class="table-wrap"><table class="confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">передаваемый параметр</th><th class="confluenceTh">значения</th></tr><tr><td class="confluenceTd">call_session</td><td class="confluenceTd">Уникальный идентификатор сеанса. Возвращается методом MakeCall или событием OnIncomingCall.</td></tr><tr><td class="confluenceTd">mode</td><td class="confluenceTd">принимает значения wait/nowait/another_mode</td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">возвращаемый параметр</th><th class="confluenceTh"><br/></th></tr><tr><td class="confluenceTd">record_file</td><td class="confluenceTd">Имя файла, с записью голосовой сессии. Имя имеет формат &lt;MSISDN&gt;_&lt;RANTOM_INT&gt;.pcm</td></tr></tbody></table></div><p><br/></p><h3 id="id-Обработкавызовапослесоединения-События,ожидаемыеприложением(опционально).1">События, ожидаемые приложением (опционально)</h3><p><br/></p><h3 id="id-Обработкавызовапослесоединения-Синтаксисвызова.4">Синтаксис вызова</h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Eclipse" data-theme="Eclipse">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;RecordCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000234&quot;, &quot;mode&quot;:&quot;wait&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {&quot;record_file&quot;:&quot;&lt;MSISDN&gt;_&lt;RANDOM_INT&gt;.pcm&quot;}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;RecordCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000234&quot;, &quot;mode&quot;:&quot;nowait&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {&quot;record_file&quot;:&quot;&lt;MSISDN&gt;_&lt;RANDOM_INT&gt;.pcm&quot;}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;RecordCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000234&quot;, &quot;mode&quot;:&quot;another_mode&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32017, &quot;reason&quot;: &quot;incorrect mode&quot;}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;RecordCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000234&quot;, &quot;mode&quot;:&quot;nowait&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32018, &quot;reason&quot;: &quot;incorrect call_session&quot;}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;RecordCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000234&quot;, &quot;mode&quot;:&quot;nowait&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32019, &quot;reason&quot;: &quot;resource error&quot;}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;RecordCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000234&quot;, &quot;mode&quot;:&quot;nowait&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32020, &quot;reason&quot;: &quot;unknown error&quot;}}, &quot;id&quot;: 2}</pre>
+</div></div><p><br/></p><h3 id="id-Обработкавызовапослесоединения-Кодыошибок.4">Коды ошибок</h3><p>В случае не успешного выполнения поле <strong>message</strong> устанавлвиается в значение <strong>Error</strong> и возвращаются следующие параметры:</p><div class="table-wrap"><table class="confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">ошибки выполнения</th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">code / reason</td><td class="confluenceTd"><ul><li>-32017 / incorrect mode</li><li>-32018 / incorrect call session</li><li>-32019 / resource error</li><li>-32020 / unknown error</li></ul></td></tr></tbody></table></div><p><br/></p><p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 04, 2018 15:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Мегафон - Телеком API : Работа с конференциями</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Мегафон - Телеком API</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3309691.html">Мегафон.API : описание программных интерфейсов</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Мегафон - Телеком API : Работа с конференциями
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Alexey Brykov</span>, last modified by <span class='editor'> Sergei Naumov</span> on Dec 04, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p>Команды для работы с конференциями позволяют создавать конференции, добавлять вызовы в конференцию, отключать участников и завершать текущую конференцию.</p><p>Все команды и ответы на них передаются по протоколу HTTP/WebSocket и синтаксически соответствуют спецификации <a href="https://www.jsonrpc.org/" class="external-link" rel="nofollow">JSON-RPC 2.0</a>.</p><p>Основным объектом является Conf - уникальная конференция, к которой могут быть подключены вызовы (исходящие - инициируемые командой MakeCall, или входящие - по получении события OnIncomingCall). Логика приложения может создавать объект &quot;конференция&quot;, а затем инициировать независимые вызовы на участников конференции, последовательно подключая их в конференции, или сначала выполнять вызовы, а затем создать объект &quot;конференция&quot;, и подключать вызовы. указывая их уникальные номера сессий.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image emoticon emoticon-warning confluence-external-resource" alt="(warning)" src="images/icons/emoticons/warning.svg" data-image-src="https://wiki.media-tel.ru/s/ru_RU/7901/15f076ba7e8091103946bd69f9c95aa63726bba9/_/images/icons/emoticons/warning.svg"></span> Важно. Список участников, расписание конференций и другие свойства сервиса аудиоконференций не является атрибутом объекта &quot;конференция&quot;, и создаются/сохраняются/обслуживаются в логике приложения. Например, для постоянных конференций (вызываемых по расписанию), список участников и возможности по его редактированию и сохранению, обрабатываются в приложении и  не требуют вызова Мегафон.API.  То же касается расписания конференций, механизма вызова логики приложения в нужное время - все это реализуется в рамках приложения.</p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><h1 id="id-Работасконференциями-CreateConf">CreateConf</h1><p>Команда используется для сборки и настройки объекта &quot;конференция&quot;</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>передаваемый</p><p>параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">max_participants</td><td class="confluenceTd"><span style="color: rgb(0,51,102);">максимальное количество участников в конференции. Параметр, задающий количество участников аудиоконференции. Не должен превышать 50 (ограничено системными ресурсами). В реальных услугах имеет смысл ограничивать 20-25 участниками (обусловлено качеством аудио на сетях связи)</span></td></tr></tbody></table></div><p class="auto-cursor-target">В случае успешного соединения поле <strong>message</strong> устанавливается в значение <strong>Success</strong> и возвращаются следующие параметры</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>возвращаемый</p><p>параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">conf_session</td><td class="confluenceTd">Уникальный номер сессии, используемый при дальнейшей работе с конференцией. Тип – UUID4</td></tr></tbody></table></div><h3 id="id-Работасконференциями-События,ожидаемыеприложением(опционально)"><strong style="letter-spacing: -0.006em;">События, ожидаемые приложением (опционально)</strong></h3><p>Отсутствуют. </p><h3 id="id-Работасконференциями-Синтаксисвызова"><strong>Синтаксис вызова</strong></h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: jfx; gutter: false; theme: Eclipse" data-theme="Eclipse">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;CreateConf&quot;,&quot;params&quot;:{&quot;max_participants&quot;:10},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {&quot;conf_session&quot;:&quot;123456&quot;}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;CreateConf&quot;,&quot;params&quot;:{&quot;max_participants&quot;:10},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32013, &quot;reason&quot;: &quot;error&quot;}}, &quot;id&quot;: 2}</pre>
+</div></div><h3 id="id-Работасконференциями-Кодыошибок"><strong>Коды ошибок</strong></h3><p>В случае не успешного выполнения поле message устанавлвиается в значение Error и возвращаются следующие параметры:<strong><br/></strong></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">ошибки выполнения</th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">code / reason</td><td class="confluenceTd">-32013 / error</td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><h1 id="id-Работасконференциями-AddToConf">AddToConf</h1><p>Добавляет вызов в аудиоконференцию. Аудио-тракт вызова коммутируется в общую конференцию.</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>передаваемый</p><p>параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">conf_session</td><td class="confluenceTd">Уникальный идентификаор сеанса, используемый при работе с конференцией. Возвращается методом CreateConf</td></tr><tr><td colspan="1" class="confluenceTd">call_session</td><td colspan="1" class="confluenceTd">Уникальный идентификатор сеанса, используемый при  работе с вызовом. Возвращается методом MakeCall или событием OnIncomingCall</td></tr></tbody></table></div><p class="auto-cursor-target">В случае успешного соединения поле <strong>message</strong> устанавливается в значение <strong>Success</strong> и возвращаются следующие параметры</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>возвращаемый</p><p>параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">не предусмотрено</td><td class="confluenceTd"><br/></td></tr></tbody></table></div><p><br/></p><h3 id="id-Работасконференциями-События,ожидаемыеприложением(опционально).1"><strong>События, ожидаемые приложением (опционально)</strong></h3><p>После вызова команды приложение автоматически подписано на следующие события  (см. <a href="https://wiki.media-tel.ru/pages/viewpage.action?pageId=3309767" rel="nofollow">Отслеживание и обработка событий</a>)</p><ul><li>OnDisconnect</li></ul><p><strong style="font-size: 16.0px;letter-spacing: -0.006em;"><br/></strong></p><p><strong style="font-size: 16.0px;letter-spacing: -0.006em;">Синтаксис вызова</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Eclipse" data-theme="Eclipse">INFO[0003] {&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;AddToConf&quot;,&quot;params&quot;:{&quot;conf_session&quot;:&quot;123123&quot;, &quot;call_session&quot;:&quot;1000234&quot;},&quot;id&quot;:2}
+INFO[0003] {&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {}}, &quot;id&quot;: 2}
+
+INFO[0003] {&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;AddToConf&quot;,&quot;params&quot;:{&quot;conf_session&quot;:&quot;123123&quot;, &quot;call_session&quot;:&quot;1000234&quot;},&quot;id&quot;:2}
+INFO[0003] {&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32015, &quot;reason&quot;: &quot;error&quot;}}, &quot;id&quot;: 2}</pre>
+</div></div><p><br/></p><h3 id="id-Работасконференциями-Кодыошибок.1"><strong>Коды ошибок</strong></h3><p>В случае не успешного выполнения поле message устанавлвиается в значение Error и возвращаются следующие параметры:<strong><br/></strong></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">ошибки выполнения</th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">code / reason</td><td class="confluenceTd">-32015 / error</td></tr></tbody></table></div><p><br/></p><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><h1 id="id-Работасконференциями-RemoveFromConf">RemoveFromConf</h1><p>Удаляет вызов из аудиоконференции с использованием протокола SIP.</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>передаваемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">conf_session</td><td class="confluenceTd">Уникальный идентификатр сеанса, используемый при работе с конференцией. Возвращается методом CreateConf</td></tr><tr><td class="confluenceTd">session</td><td class="confluenceTd">Уникальный идентификатор сеанса, используемый при дальнейшей работе с вызовом. Возвращается методом MakeCall или событием OnIncomingCall</td></tr></tbody></table></div><p class="auto-cursor-target">В случае успешного соединения поле <strong>message</strong> устанавливается в значение <strong>Success</strong> и возвращаются следующие параметры</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>возвращаемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">не предусмотрено</td><td class="confluenceTd"><br/></td></tr></tbody></table></div><p><br/></p><h3 id="id-Работасконференциями-События,ожидаемыеприложением(опционально).2"><strong>События, ожидаемые приложением (опционально)</strong></h3><p>После вызова команды приложение автоматически подписано на следующие события  (см. <a href="https://wiki.media-tel.ru/pages/viewpage.action?pageId=3309767" rel="nofollow">Отслеживание и обработка событий</a>)</p><ul><li>OnDisconnect</li></ul><h3 id="id-Работасконференциями-Синтаксисвызова.1"><strong>Синтаксис вызова</strong></h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Eclipse" data-theme="Eclipse">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;RemoveFromConf&quot;,&quot;params&quot;:{&quot;conf_session&quot;:&quot;123123&quot;, &quot;call_session&quot;:&quot;1000234&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {}}, &quot;id&quot;: 2}
+
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;RemoveFromConf&quot;,&quot;params&quot;:{&quot;conf_session&quot;:&quot;123123&quot;, &quot;call_session&quot;:&quot;1000234&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;error&quot;: {&quot;code&quot;: -32000, &quot;message&quot;: &quot;Error&quot;, &quot;data&quot;: {&quot;code&quot;: -32016, &quot;reason&quot;: &quot;resource error&quot;}}, &quot;id&quot;: 2}</pre>
+</div></div><h3 id="id-Работасконференциями-Кодыошибок.2"><strong>Коды ошибок</strong></h3><p>В случае не успешного выполнения поле message устанавлвиается в значение Error и возвращаются следующие параметры:</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">ошибки выполнения</th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">code / reason</td><td class="confluenceTd">-32016 / resource error</td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><h1 id="id-Работасконференциями-DeleteConf">DeleteConf</h1><p>Завершает все соединения и разрушает конференцию.</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>передаваемый</p><p>параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">conf_session</td><td class="confluenceTd">Уникальный идентифокатор сеанса, используемый при работе с конференцией. Возвращается методом CreateConf</td></tr></tbody></table></div><p class="auto-cursor-target">В случае успешного соединения поле <strong>message</strong> устанавливается в значение <strong>Success</strong> и возвращаются следующие параметры</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>возвращаемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">не предусмотрено</td><td class="confluenceTd"><br/></td></tr></tbody></table></div><p><br/></p><h3 id="id-Работасконференциями-Синтаксисвызова.2"><strong>Синтаксис вызова</strong></h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Eclipse" data-theme="Eclipse">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;DeleteConf&quot;,&quot;params&quot;:{&quot;conf_session&quot;:&quot;123123&quot;},&quot;id&quot;:2}
+{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {}}, &quot;id&quot;: 2}
+
+</pre>
+</div></div><pre><strong style="font-size: 16.0px;letter-spacing: -0.006em;"><br/>Коды ошибок</strong></pre><p>В случае не успешного выполнения поле <strong>message</strong> устанавлвиается в значение <strong>Error</strong> и возвращаются следующие параметры:</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">ошибки выполнения</th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">code / reason</td><td class="confluenceTd"><br/></td></tr></tbody></table></div><p><br/></p><p><strong> </strong></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 04, 2018 15:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
