@@ -7,24 +7,8 @@
  */
 html, body, p, div, h1, h2, h3, h4, h5, h6, img, pre, form, fieldset {
     margin: 0;
-    padding: 10;
-    text-align: justify;
+    padding: 0;
 }
-
-p {
-  margin-top: 2px;
-}
-
-h2 {
-  margin-top: 20px;
-}
-
-pre {
-  background-color: rgb(15,25,42);
-  color: whitesmoke;
-  white-space: pre-wrap;
-}
-
 ul, ol, dl {
     margin: 0;
 }
@@ -91,20 +75,11 @@ input[type="reset"] {
  */
 body {
     color: @aui-text-color;
-    //font-family: @aui-font-family;
-    //font-family: Verdana, 'Times New Roman', Times, serif;
-    //font-size: @aui-font-size-medium;
+    font-family: @aui-font-family;
+    font-size: @aui-font-size-medium;
     font-weight: @aui-font-weight-normal;
     line-height: unit(20 / @aui-font-size-medium);
     letter-spacing: @aui-font-letter-spacing;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background: #F3F7F9;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 16px;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 /* International Font Stacks*/
@@ -1828,7 +1803,6 @@ a.blogHeading {
 
   .innerCell {
     overflow-x: auto;
-    background: #ff0000;
   }
 
   .placeholder {
@@ -2118,14 +2092,12 @@ div.large + div.sidebars,
 @import "colors.less";
 
 .confluenceTable {
-    width: 90%;
     border-collapse: collapse;
-    border: 1px solid black;
 }
 
 .confluenceTh,
 .confluenceTd {
-    border: 1px solid black;
+    border: 1px solid @adg-N50-karl;
     padding: 7px 10px; /* CONFDEV-13618: line-height will add up 3 pixels, so we have a 10px top padding for text. Images will remain with 7px top margin though (see thread in Stash) */
     vertical-align: top;
     text-align: left;
@@ -3499,8 +3471,8 @@ h1.pagetitle img.logo {
     zoom: 1;
 }
 .has-sidebar #content .code {
-    _clear: both;
-    _overflow: auto;
+    _clear: both; 
+    _overflow: auto; 
 }
 .menu-section-list li a:visited,
 .menu-section-list li a:hover {
