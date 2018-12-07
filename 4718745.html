@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Мегафон - Телеком API : Работа с файлами</title>
+        <title>MegaFon - Telecom API : Работа с файлами</title>
         <link rel="stylesheet" href="styles/site.css" type="text/css" />
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
@@ -13,7 +13,7 @@
                     <div id="breadcrumb-section">
                         <ol id="breadcrumbs">
                             <li class="first">
-                                <span><a href="index.html">Мегафон - Телеком API</a></span>
+                                <span><a href="index.html">MegaFon - Telecom API</a></span>
                             </li>
                                                     <li>
                                 <span><a href="3309691.html">Мегафон.API : описание программных интерфейсов</a></span>
@@ -22,7 +22,7 @@
                     </div>
                     <h1 id="title-heading" class="pagetitle">
                                                 <span id="title-text">
-                            Мегафон - Телеком API : Работа с файлами
+                            MegaFon - Telecom API : Работа с файлами
                         </span>
                     </h1>
                 </div>
@@ -36,21 +36,24 @@
     
         
         
-            Created by <span class='author'> Alexey Brykov</span>, last modified by <span class='editor'> Sergei Naumov</span> on Dec 05, 2018
+            Created by <span class='author'> Alexey Brykov</span>, last modified by <span class='editor'> Sergei Naumov</span> on Dec 07, 2018
                         </div>
                     <div id="main-content" class="wiki-content group">
-                    <p>Пользователь МегаФон.API получает небольшое дисковое пространстводля размещения файлов приветствий, (см. команду <a href="4718672.html">PlayAnnouncement</a>) и файлов записи разговора. Файлы с записанными разговорами периодически удаляются, поэтому рекомендуается их забирать как можно скорее. Доступ к этим разделам осуществляется по WebDAV. Просмотреть содержимое пространства приветсвий можно прями из командной строки</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+                    <p>Пользователь МегаФон.API получает небольшое дисковое пространство для размещения файлов приветствий, (см. команду <a href="4718672.html">PlayAnnouncement</a>) и файлов записи разговора. Файлы с записанными разговорами периодически удаляются, поэтому рекомендуается их забирать как можно скорее. Доступ к этим разделам осуществляется по WebDAV. Просмотреть содержимое пространства приветсвий можно прями из командной строки</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Eclipse" data-theme="Eclipse">[serge@yarilo examples]$ curl -X GET --basic --user 79281234567:pass http://192.168.1.67/media/prompts
 [
-{ &quot;name&quot;:&quot;hello.alaw&quot;, &quot;type&quot;:&quot;file&quot;, &quot;mtime&quot;:&quot;Sun, 25 Nov 2018 07:40:26 GMT&quot;, &quot;size&quot;:123716 },
-{ &quot;name&quot;:&quot;welcome.alaw&quot;, &quot;type&quot;:&quot;file&quot;, &quot;mtime&quot;:&quot;Sat, 24 Nov 2018 20:46:28 GMT&quot;, &quot;size&quot;:9520 },
+{ &quot;name&quot;:&quot;alarm.pcm&quot;, &quot;type&quot;:&quot;file&quot;, &quot;mtime&quot;:&quot;Sun, 25 Nov 2018 07:40:26 GMT&quot;, &quot;size&quot;:123716 },
+{ &quot;name&quot;:&quot;record.pcm&quot;, &quot;type&quot;:&quot;file&quot;, &quot;mtime&quot;:&quot;Fri, 07 Dec 2018 08:17:58 GMT&quot;, &quot;size&quot;:48160 },
+{ &quot;name&quot;:&quot;welcome.pcm&quot;, &quot;type&quot;:&quot;file&quot;, &quot;mtime&quot;:&quot;Sat, 24 Nov 2018 20:46:28 GMT&quot;, &quot;size&quot;:9520 },
 { &quot;name&quot;:&quot;welcome.wav&quot;, &quot;type&quot;:&quot;file&quot;, &quot;mtime&quot;:&quot;Sat, 24 Nov 2018 20:46:58 GMT&quot;, &quot;size&quot;:19084 }
 ][serge@yarilo examples]$ </pre>
 </div></div><p>или из любого пользовательского кода с использованием соответствующих инструментов. Чтобы положить файл с приветствием, необходимо</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Eclipse" data-theme="Eclipse">curl -X PUT -T login.alaw --user 79281234567:qwerty http://92.168.1.67/media/prompts/login.alaw</pre>
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Eclipse" data-theme="Eclipse">curl -X PUT -T login.pcm --user 79281234567:qwerty http://92.168.1.67/media/prompts/login.pcm</pre>
 </div></div><p>А для удаления, необходимо выполнить DELETE:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">curl -X DELETE --basic --user 79281234567:qwerty http://192.168.1.67/media/prompts/welcome.wav</pre>
-</div></div><p>Аналогичные операции проделываются и для пространства записанных разговоров</p><p><br/></p><p><span style="letter-spacing: 0.0px;"><br/></span></p><p><br/></p>
+</div></div><p>Аналогичные операции проделываются и для пространства записанных разговоров. Например для получения на локальный компьютер файла записи вызова надо выполнить команду:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">curl -O --user &quot;79281234567:qwerty&quot; http://192.168.1.67/media/records/79281234567_106432.pcm</pre>
+</div></div><p>Для прослушивания файлов pcm можно использовать такие программы как AudaCity (Windows/Max OSX/Linux) или Prompt Studio (Windows). Можно перекодировать, с помощью, например, sox в Linux.</p><p><span style="letter-spacing: 0.0px;"><br/></span></p><p><br/></p>
                     </div>
 
                     
@@ -58,7 +61,7 @@
                 </div>             </div> 
             <div id="footer" role="contentinfo">
                 <section class="footer-body">
-                    <p>Document generated by Confluence on Dec 05, 2018 17:09</p>
+                    <p>Document generated by Confluence on Dec 07, 2018 16:40</p>
                     <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
                 </section>
             </div>

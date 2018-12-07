@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Мегафон - Телеком API : Входящий вызов</title>
+        <title>MegaFon - Telecom API : Входящий вызов</title>
         <link rel="stylesheet" href="styles/site.css" type="text/css" />
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
@@ -13,7 +13,7 @@
                     <div id="breadcrumb-section">
                         <ol id="breadcrumbs">
                             <li class="first">
-                                <span><a href="index.html">Мегафон - Телеком API</a></span>
+                                <span><a href="index.html">MegaFon - Telecom API</a></span>
                             </li>
                                                     <li>
                                 <span><a href="3309691.html">Мегафон.API : описание программных интерфейсов</a></span>
@@ -22,7 +22,7 @@
                     </div>
                     <h1 id="title-heading" class="pagetitle">
                                                 <span id="title-text">
-                            Мегафон - Телеком API : Входящий вызов
+                            MegaFon - Telecom API : Входящий вызов
                         </span>
                     </h1>
                 </div>
@@ -36,7 +36,7 @@
     
         
         
-            Created by <span class='author'> Alexey Brykov</span>, last modified by <span class='editor'> Sergei Naumov</span> on Dec 04, 2018
+            Created by <span class='author'> Alexey Brykov</span>, last modified by <span class='editor'> Sergei Naumov</span> on Dec 06, 2018
                         </div>
                     <div id="main-content" class="wiki-content group">
                     <div class="contentLayout2">
@@ -51,7 +51,7 @@
 <div class="columnLayout single" data-layout="single">
 <div class="cell normal" data-type="normal">
 <div class="innerCell">
-<h1 id="id-Входящийвызов-AnswerCall">AnswerCall</h1><p>Прием входящего вызова. Команда посылается при наличии активного входящего  вызова (См. <a href="3309767.html">События</a>. OnIncomingCall). Номера и код сессии считываются из OnIncomingCall.</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>передаваемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">call_session</td><td class="confluenceTd">уникальный идентификатор сессии, возвращаемый из события OnIncomingCall</td></tr></tbody></table></div><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>возвращаемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">не предусмотрено</td><td class="confluenceTd"><br/></td></tr></tbody></table></div><p><strong style="font-size: 16.0px;letter-spacing: -0.006em;"><br/></strong></p><p><strong style="font-size: 16.0px;letter-spacing: -0.006em;">События, ожидаемые приложением (опционально)</strong></p><p>После вызова команды приложение автоматически подписано на следующие события  (см. <a href="3309767.html">Отслеживание и обработка событий</a>)</p><ul><li><p class="_mce_tagged_br">OnDisconnect</p></li><li class="_mce_tagged_br">OnSpeech</li><li class="_mce_tagged_br">OnSilence</li></ul><h3 id="id-Входящийвызов-Синтаксисвызова.1"><strong style="letter-spacing: 0.0px;">Синтаксис вызова</strong></h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<h1 id="id-Входящийвызов-AnswerCall">AnswerCall</h1><p>Прием входящего вызова. Команда посылается при наличии активного входящего  вызова (См. <a href="3309767.html">События</a>. OnIncomingCall). Номера и код сессии считываются из OnIncomingCall.</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>передаваемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">call_session</td><td class="confluenceTd">уникальный идентификатор сессии, возвращаемый из события OnIncomingCall</td></tr></tbody></table></div><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>возвращаемый параметр</p></th><th class="confluenceTh">значение</th></tr><tr><td class="confluenceTd">не предусмотрено</td><td class="confluenceTd"><br/></td></tr></tbody></table></div><p><strong style="font-size: 16.0px;letter-spacing: -0.006em;"><br/></strong></p><p><strong style="font-size: 16.0px;letter-spacing: -0.006em;">События, ожидаемые приложением (опционально)</strong></p><p>После вызова команды приложение автоматически подписано на следующие события  (см. <a href="3309767.html">Отслеживание и обработка событий</a>)</p><ul><li><p class="_mce_tagged_br">OnTerminateCall</p></li><li class="_mce_tagged_br">OnSpeech (в разработке)</li><li class="_mce_tagged_br">OnSilence (в разработке)</li></ul><h3 id="id-Входящийвызов-Синтаксисвызова.1"><strong style="letter-spacing: 0.0px;">Синтаксис вызова</strong></h3><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: js; gutter: false; theme: Eclipse" data-theme="Eclipse">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;AnswerCall&quot;,&quot;params&quot;:{&quot;call_session&quot;:&quot;1000277&quot;},&quot;id&quot;:2}
 {&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;result&quot;: {&quot;message&quot;: &quot;Success&quot;, &quot;data&quot;: {}}, &quot;id&quot;: 2}
 
@@ -71,7 +71,7 @@
                 </div>             </div> 
             <div id="footer" role="contentinfo">
                 <section class="footer-body">
-                    <p>Document generated by Confluence on Dec 05, 2018 17:09</p>
+                    <p>Document generated by Confluence on Dec 07, 2018 16:40</p>
                     <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
                 </section>
             </div>
