@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MegaFon - Telecom API : МАТЕРИАЛЫ ДЛЯ ХАКАТОНОВ</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">MegaFon - Telecom API</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3309691.html">Мегафон.API : описание программных интерфейсов</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            MegaFon - Telecom API : МАТЕРИАЛЫ ДЛЯ ХАКАТОНОВ
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Sergei Naumov</span>, last modified on Dec 07, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Для работы на хакатоне &quot;47 часов&quot; разработчикам предоставляется набор тестовых номеров, API-подписок  (6 штук). Для получения подписки необходимо:</p><ol><li>зайти на <a href="http://83.149.26.165/v0/devportal" class="external-link" rel="nofollow">http://83.149.26.165/v0/devportal</a> и зарегистрироваться, указав электронный адрес</li><li>после входа на портал выбрать номер телефона API-подписки, с которым вы будете работать. Подписку можно освобождать от учетной записи и привязывать снова. Просьба относится к этому ресурсу бережно, уважайте своих коллег. В момент привязки также будет сгенерирован JWT-токен для аутентификации на платформе:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/4718791/6553735.png" data-image-src="attachments/4718791/6553735.png" data-unresolved-comment-count="0" data-linked-resource-id="6553735" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="dev_portal.png" data-base-url="https://wiki.media-tel.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="4718791" data-linked-resource-container-version="33"></span></li><li>в дальнейшем необходимо использовать JWT-токен в своем коде. Если вы предполагаете писать JS-код для работы в браузере, где нет возможности добавлять HTTP-заголовки внутрь WebSocket'ов, используйте Basic-аутентификацию с логином и паролем. Логином в данном случае будет API-подписка, а паролем - пароль от зарегистрированной на портале учетной записи </li><li>документацию можно читать на <a href="https://megafonapi.github.io/" class="external-link" rel="nofollow">https://megafonapi.github.io/</a></li><li>в качестве endpoint'а для открытия WebSocket'а использовать <strong>ws://83.149.26.165/v0/api</strong></li><li>медиафайлы приветствий класть на <a href="http://83.149.26.165/media/prompts" class="external-link" rel="nofollow">http://83.149.26.165/media/prompts</a></li><li>медиафайлы записанных разговоров забирать с <a href="http://83.149.26.165/media/records" class="external-link" rel="nofollow">http://83.149.26.165/media/records</a></li><li>Есть Telegram-группа &quot;МегаФон.API&quot; ( @megafonapigroup ) и одноименный Telegram-канал (t.me/megafonapi)</li></ol><p>Следует помнить, что вызовы к API по сути своей асинхронны - сеть связи представляет собой систему реального времени. Реализация параллелизма вызовов, если она необходима в конкретном приложении, лежит на разработчике и достигается средствами конкретных инструментов разработки (язык программирования, среда исполнения и т.п.).</p><h1 style="text-align: center;" id="id-МАТЕРИАЛЫДЛЯХАКАТОНОВ-Различныепримерыможнонайтинастраницахпроектанаgithub&#39;е.">Различные примеры можно найти на <a href="https://github.com/megafonapi/examples" class="external-link" rel="nofollow">страницах проекта на github'е</a>.</h1><p><br/></p><p>Примеры реализуют разные сценарии разными способами на JavaScript, на Python и даже на Perl! </p><p><br/></p><h3 id="id-МАТЕРИАЛЫДЛЯХАКАТОНОВ-Известныебаги(на7.12.2018):">Известные баги (на 7.12.2018):</h3><ul><li>криво работают RemoveFromConf и DeleteConf</li><li>Запись конференции написана, но не инсталлирована. Будет в понедельник и далее доступна для группы бета-тестеров</li></ul><p><br/></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/4718791/6553735.png">dev_portal.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Dec 07, 2018 16:40</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
