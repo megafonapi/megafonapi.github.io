@@ -1,5 +1,4 @@
 
-
 @import './imports/global';
 
 /**
@@ -26,6 +25,7 @@ h2 {
 pre {
   background-color: whitesmoke;
   padding 0;
+  width: 90%;
   overflow: auto;
   border: 1px solid #5e57dd;
   color: #5e57dd;
