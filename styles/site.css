@@ -21,6 +21,8 @@ h2 {
 pre {
   background-color: whitesmoke;
   padding 0;
+  overflow: auto;
+  overflow-y: hidden;
   width: 100%;
   border: 1px solid #5e57dd;
   color: #5e57dd;
@@ -102,11 +104,9 @@ body {
     font-weight: @aui-font-weight-normal;
     line-height: unit(20 / @aui-font-size-medium);
     letter-spacing: @aui-font-letter-spacing;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #F3F7F9;
-    width: 95%;
     font: 13px/22px 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Geneva,Verdana,sans-serif;
     margin-left: 10%;
     margin-right: 10%;
