@@ -22,7 +22,6 @@ pre {
   background-color: whitesmoke;
   padding 0;
   width: 100%;
-  overflow: auto;
   border: 1px solid #5e57dd;
   color: #5e57dd;
   white-space: pre-wrap;
