@@ -19,17 +19,19 @@ h2 {
 }
 
 pre {
+  box-sizing: border-box;
   background-color: whitesmoke;
   padding 0;
+  margin: 0;
   overflow: auto;
   overflow-y: hidden;
-  width: 80%;
+  width: 95%;
   border: 1px solid #5e57dd;
   color: #5e57dd;
-  white-space: pre-wrap;
   font-family: "Courier New", Courier, monospace, sans-serif;
   line-height: 1.6em;
   font-size: 11px;
+  line-height: 20px;
 }
 
 ul, ol, dl {
@@ -2123,7 +2125,7 @@ div.large + div.sidebars,
 @import "colors.less";
 
 .confluenceTable {
-    width: 100%;
+    width: 95%;
     border-collapse: collapse;
     border: 1px solid black;
 }
@@ -2283,7 +2285,7 @@ table.confluenceTable td.numberingColumn {
 }
 
 .code, .preformatted {
-    background-color: #fff;
+    background-color: whitesmoke;
     overflow: auto;
 }
 
