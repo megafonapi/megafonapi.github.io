@@ -108,10 +108,11 @@ body {
     letter-spacing: @aui-font-letter-spacing;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #F3F7F9;
-    font: 13px/22px 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Geneva,Verdana,sans-serif;
-    margin-left: 10%;
-    margin-right: 10%;
+    background: #330066;
+    font: 18px/28px 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Geneva,Verdana,sans-serif;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20%;
 }
 
 /* International Font Stacks*/
