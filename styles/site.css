@@ -99,7 +99,7 @@ input[type="reset"] {
  * TYPOGRAPHY - 14px base font size, agnostic font stack
  */
 body {
-    color: @aui-text-color;
+    color: #FFFFFF;
     //font-family: @aui-font-family;
     //font-family: Verdana, 'Times New Roman', Times, serif;
     //font-size: @aui-font-size-medium;
@@ -108,7 +108,7 @@ body {
     letter-spacing: @aui-font-letter-spacing;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #330066;
+    background: #731982;
     font: 18px/28px 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Geneva,Verdana,sans-serif;
     margin-left: 20%;
     margin-right: 20%;
