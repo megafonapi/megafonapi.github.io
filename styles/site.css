@@ -99,7 +99,7 @@ input[type="reset"] {
  * TYPOGRAPHY - 14px base font size, agnostic font stack
  */
 body {
-    color: #FFFFFF;
+    color: #731982;;
     //font-family: @aui-font-family;
     //font-family: Verdana, 'Times New Roman', Times, serif;
     //font-size: @aui-font-size-medium;
@@ -108,7 +108,7 @@ body {
     letter-spacing: @aui-font-letter-spacing;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #731982;
+    background: #EBE9E9;
     font: 18px/28px 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Geneva,Verdana,sans-serif;
     margin-left: 20%;
     margin-right: 20%;
@@ -297,7 +297,7 @@ abbr {
 
 
 a {
-    color: @aui-link-color;
+    color: #FFFFFF;
     text-decoration: @aui-link-decoration;
 }
 
