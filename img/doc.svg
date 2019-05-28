@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="175" height="167" viewBox="0 0 175 167">
+    <g fill="none" fill-rule="evenodd" transform="translate(2 2)">
+        <g stroke="#333" stroke-linecap="square" stroke-width="2.638">
+            <path d="M92.425.086l4.108 4.118M96.53.086l-4.108 4.118"/>
+        </g>
+        <ellipse cx="168.007" cy="57.857" stroke="#333" stroke-width="2.638" rx="2.993" ry="3"/>
+        <g stroke="#333" stroke-linecap="square" stroke-width="2.638">
+            <path d="M.086 91.8l4.107 4.118M4.19 91.8L.082 95.918"/>
+        </g>
+        <g fill-rule="nonzero" transform="translate(32.665 18.857)">
+            <path fill="#FFF" stroke="#333" stroke-width="4.286" d="M9.23 28.464H.68v99.25l14.535 15.429H98.15v-9"/>
+            <path fill="#FFF" stroke="#333" stroke-width="4.286" d="M21.2 17.143H10.94v110.571l6.84 5.143h90.63v-11.143"/>
+            <path fill="#00B956" d="M27 0v113.143l7.695 2.571h89.775V0z"/>
+            <ellipse cx="50.27" cy="68.571" fill="#FFF" stroke="#333" stroke-width="4.286" rx="17.955" ry="18"/>
+            <path stroke="#333" stroke-width="4.286" d="M21 6v113.143l7.695 2.571h89.775V6z"/>
+            <path stroke="#333" stroke-width="4.286" d="M87.468 87.857h18.799v20.571H87.468z"/>
+            <path fill="#FFF" stroke="#333" stroke-width="4.286" d="M32.748 17.571h18.799v20.571H32.748z"/>
+            <path stroke="#333" stroke-width="4.286" d="M34.458 98.143h43.594v10.286H34.458zM85.325 18.429h23.085M85.325 28.714h23.085M85.325 75h23.085M59.675 39h48.735M72.927 51h35.483M80.195 64.286h28.215"/>
+        </g>
+    </g>
+</svg>

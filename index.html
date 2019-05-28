@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>МегаФон.API - Telecom API)</title>
-        <link rel="stylesheet" href="styles/site.css" type="text/css" />
-        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 
-    <body>
+    <title>Megafon API</title>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header__wrap">
+                <a href="/" class="header__logo">
+                    <img src="img/megafon-logo-green.png" class="header__logo-img">
+                    <span class="header__logo-tagline">API</span>
+                </a>
+            </div>
+        </header>
 
-Документация на <a href="https://testapi.megafon.ru/v1/spec">testapi.megafon.ru</a>
-<br>
-Примеры на <a href="https://github.com/megafonapi/examples">github.com/megafonapi/examples</a>
+        <main class="content">
+            <section class="section ">
+                <div class="section__wrap">
+                    <h1 class="ttl1">Мастер-класс на "Юпитер-2019" </h1>
 
-    </body>
+                    <ul class="card__list">
+                        <li class="card__item">
+                            <div class="card__wrap">
+                                <div class="card__img-wrap">
+                                    <img src="img/doc.svg" class="card__img">
+                                </div>
+                                <h3 class="card__ttl3">Документация:</h3>
+                                <a target="_blank" href="http://testapi.megafon.ru/v1/spec" class="card__link">testapi.megafon.ru/v1/spec</a>
+                            </div>
+                        </li>
+                        <li class="card__item">
+                            <div class="card__wrap">
+                                <div class="card__img-wrap">
+                                    <img src="img/tmpl.svg" class="card__img">
+                                </div>
+                                <h3 class="card__ttl3">Примеры:</h3>
+                                <a target="_blank" href="http://github.com/megafonapi/examples" class="card__link">github.com/megafonapi/examples</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
 
+        <footer class="footer">
+            <div class="footer__wrap">
+                <div class="footer__copyright">
+                    <div class="footer__age">6+</div>
+                    <p class="footer__copyright-cnt">© 2019, ПАО «МегаФон»</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
 </html>
