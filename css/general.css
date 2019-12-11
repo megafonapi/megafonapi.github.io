@@ -48,11 +48,11 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: #ffffff;
-    background: url("../img/bg.png") no-repeat;
-    background: url(../img/bg.png) no-repeat, linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.08));
+    background: url("../img/bg.пng"), linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.08));
     -webkit-background-size: COVER;
     background-size: COVER;
 }
+
 body *, html * {
     font-family: 'Graphik', Arial, sans-serif;
     font-size: 15px;
@@ -65,6 +65,27 @@ body *, html * {
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
+
+table {
+    border: 1px solid black; /* Рамка вокруг таблицы */
+}
+td, th {
+    padding: 3px; /* Поля вокруг содержимого ячеек */
+    font-family: monospace;
+    font-size: 10pt;
+}
+
+th {
+    text-align: center; /* Выравнивание по левому краю */
+    background: #7207a9; /* Цвет фона */
+    color: white; /* Цвет текста */
+}
+
+p {
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
 .page {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -103,6 +124,17 @@ body *, html * {
     padding: 0 20px;
     box-sizing: border-box;
 }
+
+.solid {
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    text-align: center;
+    font-weight: bolder;
+    color: #7207a9;
+    padding: 4px;
+}
+
 .ttl1 {
     font-size: 22px;
     font-weight: 600;
