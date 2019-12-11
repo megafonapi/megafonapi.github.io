@@ -66,6 +66,13 @@ body *, html * {
     -webkit-text-size-adjust: 100%;
 }
 
+pre {
+    font-family: monospace;
+    font-size: 12px;
+    background:lightgrey;
+    color: #7207a9;
+}
+
 table {
     border: 1px solid black; /* Рамка вокруг таблицы */
 }
@@ -122,7 +129,7 @@ p {
     max-width: 1080px;
     margin: 0 auto;
     padding: 0 20px;
-    box-sizing: border-box;
+    box-sizing: border-box;    
 }
 
 .solid {
