@@ -48,7 +48,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: #ffffff;
-    background: url("../img/bg.пng"), linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.08));
+    background: url("../img/bg.png"), linear-gradient(to left, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.08));
     -webkit-background-size: COVER;
     background-size: COVER;
 }
