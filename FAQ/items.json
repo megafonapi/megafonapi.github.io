@@ -1,0 +1,31 @@
+{
+        "status": 200,
+        "data": [
+                {
+                        "id": 10,
+                        "name": "Что такое МегаФон.API?",
+                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-10.md"
+                },
+                {
+                        "id": 11,
+                        "name": "Примеры кода есть?",
+                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-11.md"                        
+                },
+                {
+                        "id": 12,
+                        "name": "Зачем МегаФону своя API'шечка?",
+                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-12.md"                        
+                },
+                {
+                        "id": 13,
+                        "name": "Чем вы лучше Tvilio?",
+                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-13.md"                                                
+                },
+                {
+                        "id": 23,
+                        "name": "Вы всё время говорите \"встать в онлайн\". Это что значит, надо какие-то команды посылать куда-то?",
+                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-23.md"                                                
+                }
+        ],
+        "success": true
+}
