@@ -4,47 +4,47 @@
                 {
                         "id": 10,
                         "name": "Что такое МегаФон.API?",
-                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-10.md"
+                        "contentUrl": "https://megafonapi.github.io/faq-data/md/item-10.md"
                 },
                 {
                         "id": 11,
                         "name": "Примеры кода есть?",
-                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-11.md"                        
+                        "contentUrl": "https://megafonapi.github.io/faq-data/md/item-11.md"                        
                 },
                 {
                         "id": 12,
                         "name": "Зачем МегаФону своя API'шечка?",
-                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-12.md"                        
+                        "contentUrl": "https://megafonapi.github.io/faq-data/md/item-12.md"                        
                 },
                 {
                         "id": 13,
                         "name": "Чем вы лучше Tvilio?",
-                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-13.md"                                                
+                        "contentUrl": "https://megafonapi.github.io/faq-data/md/item-13.md"                                                
                 },
                 {
                         "id": 14,
                         "name": "А вот ещё есть Zingaya",
-                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-14.md"                                                
+                        "contentUrl": "https://megafonapi.github.io/faq-data/md/item-14.md"                                                
                 },
                 {
                         "id": 15,
                         "name": "Операторы большие... И \"кидают\"...",
-                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-15.md"                                                
+                        "contentUrl": "https://megafonapi.github.io/faq-data/md/item-15.md"                                                
                 },
                 {
                         "id": 16,
                         "name": "Как устроен МегаФон.API?",
-                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-16.md"                                                
+                        "contentUrl": "https://megafonapi.github.io/faq-data/md/item-16.md"                                                
                 },                
                 {
                         "id": 17,
                         "name": "Что с поддержкой?",
-                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-17.md"                                                
+                        "contentUrl": "https://megafonapi.github.io/faq-data/md/item-17.md"                                                
                 },                
                 {
                         "id": 23,
                         "name": "Вы всё время говорите \"встать в онлайн\". Это что значит, надо какие-то команды посылать куда-то?",
-                        "contentUrl": "https://megafonapi.github.io/FAQ/md/item-23.md"                                                
+                        "contentUrl": "https://megafonapi.github.io/faq-data/md/item-23.md"                                                
                 }
         ],
         "success": true
