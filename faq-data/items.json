@@ -105,7 +105,12 @@
                         "id": 32,
                         "name": "Какой формат у голосовых файлов (приветсвия и записи)?",
                         "contentUrl": "/faq-data/md/item-32.md"
-                }                                
+                },
+                {
+                        "id": 33,
+                        "name": "Как эти файлы загружать/выгружать?",
+                        "contentUrl": "/faq-data/md/item-33.md"
+                }                
         ],
         "success": true
 }
