@@ -2,6 +2,7 @@
 ````python
 import asyncio
 from jsonrpc_websocket import Server,ProtocolError
+
 endpoint_url = "wss://runapi.megafon.ru/v1/api/"
 megafon = Server(endpoint_url+apiKey)
 await megafon.ws_connect()

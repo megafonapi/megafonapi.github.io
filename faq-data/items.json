@@ -1,116 +1,141 @@
 {
-        "status": 200,
-        "data": [
-                {
-                        "id": 10,
-                        "name": "Что такое МегаФон.API?",
-                        "contentUrl": "/faq-data/md/item-10.md"
-                },
-                {
+	"status": 200,
+	"data": [
+		{
+		"title": "Общие вопросы",
+		"items": [
+		        {
+			"id": 10,
+			"name": "Что такое МегаФон.API?",
+			"contentUrl": "/faq-data/md/item-10.md"
+		        },
+                        {
                         "id": 11,
                         "name": "Примеры кода есть?",
                         "contentUrl": "/faq-data/md/item-11.md"                        
-                },
-                {
+		        },
+                        {
                         "id": 12,
                         "name": "Зачем МегаФону своя API'шечка?",
                         "contentUrl": "/faq-data/md/item-12.md"                        
-                },
-                {
-                        "id": 13,
-                        "name": "Чем вы лучше Tvilio?",
-                        "contentUrl": "/faq-data/md/item-13.md"                                                
-                },
-                {
+                        },				
+		        {
+			"id": 13,
+			"name": "Чем вы лучше Tvilio?",
+			"contentUrl": "/faq-data/md/item-13.md"
+		        },
+                        {
                         "id": 14,
                         "name": "А вот ещё есть Zingaya",
                         "contentUrl": "/faq-data/md/item-14.md"                                                
-                },
-                {
+                        },
+                        {
                         "id": 15,
                         "name": "Операторы большие... И \"кидают\"...",
                         "contentUrl": "/faq-data/md/item-15.md"                                                
-                },
-                {
+                        },
+                        {
                         "id": 16,
                         "name": "Как устроен МегаФон.API?",
                         "contentUrl": "/faq-data/md/item-16.md"                                                
-                },                
-                {
+                        },                
+                        {
                         "id": 17,
                         "name": "Что с поддержкой?",
                         "contentUrl": "/faq-data/md/item-17.md"                                                
-                },                
-                {
+                        },                
+                        {
                         "id": 18,
                         "name": "Почему вы выбрали WebSocket'ы и JSON/RPC, а не \"более привычный\" REST API ?",
                         "contentUrl": "/faq-data/md/item-18.md"                                                
-                },                
-                {
+                        },                
+                        {
                         "id": 19,
                         "name": "А всякие там OneAPI от 3GPP?",
                         "contentUrl": "/faq-data/md/item-19.md"                                                
-                },                
-                {
+                        },                
+                        {
                         "id": 110,
                         "name": "А вот есть ещё gRPC, HTTP2!",
                         "contentUrl": "/faq-data/md/item-110.md"                                                
-                },                
-                {
+                        },                
+                        {
                         "id": 111,
                         "name": "Раз такая пьянка, где WebRTC?",
                         "contentUrl": "/faq-data/md/item-111.md"                                                
-                },                
-                {
+                        },                
+                        {
                         "id": 112,
                         "name": " Как правильно представлять в контексте сети приложение, использующее МегаФон.API?",
                         "contentUrl": "/faq-data/md/item-112.md"                                                
-                },                
-                {
+                        },                
+                        {
                         "id": 113,
                         "name": "Как МегаФон.API пересекается с другими конвергентными услугами \"МегаФона\" (Виртуальная АТС и т.п.)?",
                         "contentUrl": "/faq-data/md/item-113.md"                                                
-                },                
-                {
+                        },                
+                        {
                         "id": 114,
                         "name": "Где API для входящего SMS? Не допилили, демоны??",
                         "contentUrl": "/faq-data/md/item-114.md"                                                
-                },               
-                {
+                        }
+			]
+		},
+		{
+		"title": "Работа с МегаФон API",
+		"items": [
+                        {
                         "id": 21,
                         "name": "Для учётки МегаФон.API нужно покупать новую SIM-карту?",
                         "contentUrl": "/faq-data/md/item-21.md"                                                
-                },
-                {
+                        },
+                        {
                         "id": 22,
                         "name": "У кого приоритет, у мобилки или у API? И вообще, как трафик ходит?",
                         "contentUrl": "/faq-data/md/item-22.md" 
-                },
-                {
+                        },
+                        {
                         "id": 23,
                         "name": "Вы всё время говорите \"встать в онлайн\". Это что значит, надо какие-то команды посылать куда-то?",
                         "contentUrl": "/faq-data/md/item-23.md"                                                
-                },
-                {
+                        },
+                        {
                         "id": 24,
                         "name": "Что такое защитный интервал и зачем он нужен?",
                         "contentUrl": "/faq-data/md/item-24.md"  
-                },
-                {
+                        }
+			]
+		},
+		{
+		"title": "Программирование с МегаФон API",
+		"items": [
+                        {
                         "id": 31,
                         "name": "На каком языке можно писать код?",
                         "contentUrl": "/faq-data/md/item-31.md"                                                
-                },
-                {
+                        },
+                        {
                         "id": 32,
-                        "name": "Какой формат у голосовых файлов (приветсвия и записи)?",
+                        "name": "Какой формат у голосовых файлов (приветствия и записи)?",
                         "contentUrl": "/faq-data/md/item-32.md"
-                },
-                {
+                        },
+                        {
                         "id": 33,
                         "name": "Как эти файлы загружать/выгружать?",
                         "contentUrl": "/faq-data/md/item-33.md"
-                }                
-        ],
-        "success": true
+                        },
+                        {
+                        "id": 34,
+                        "name": "Как форматировать URL точки входа (endpoint URL)?",
+                        "contentUrl": "/faq-data/md/item-34.md"
+                        },
+                        {
+                        "id": 39,
+                        "name": "Как работать с Yandex Speach Kit?",
+                        "contentUrl": "/faq-data/md/item-39.md"
+                        }                
+			]
+		}
+	],
+	"success": true
 }
